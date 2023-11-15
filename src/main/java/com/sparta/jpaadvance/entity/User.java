@@ -16,7 +16,8 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-
-    @OneToMany(mappedBy = "user")
-    private List<Order> orderList = new ArrayList<>();
+    //FK의 주인 지정
+    @OneToMany(mappedBy = "user") //Default=LAZY
+    //DB에 직접적 저장x //관계를 표시하기 위한 하나의 방법
+    private List<Food> foodList = new ArrayList<>();
 }
